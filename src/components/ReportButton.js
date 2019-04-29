@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import '../assets/styles/ReportButton.css';
 
 class ReportButton extends Component {
-    state = {  }
-    render() {
-        return ( <div>
-            <button>Report</button>
-        </div> );
-    }
+  state = {};
+
+  handleReporting = () => {
+    window.location.href="/login";
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleReporting}>Report</button>
+      </div>
+    );
+  }
 }
 
 export default ReportButton;
