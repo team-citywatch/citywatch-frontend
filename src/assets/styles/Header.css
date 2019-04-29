@@ -1,14 +1,10 @@
 
 .main-header{
-    border: 1px solid red;
     display: flex;
-    /* display: inline; */
 }
 #search-container{
     flex: 2;
-    border: 1px solid yellow;
 }
 #report-button-container{
     width: 200px;
-    border: 1px solid green;
 }

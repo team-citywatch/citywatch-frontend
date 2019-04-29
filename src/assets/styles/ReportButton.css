@@ -1,9 +1,20 @@
-button {
-  width: 100%;
-  padding: 12px 10px;
-  border-radius: 4px;
-  background-color: #4167B2;
+button, input[type="submit"] {
+  background-color: #4167b2;
   color: #ffffff;
+  display: inline-flex;
+  width: fit-content;
+  justify-content: center;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  padding: 10px 20px;
+  text-transform: uppercase;
   cursor: pointer;
-  font-size: 18px;
+  border: 1px solid #4167b2;
+  border-radius: 2px;
+  font-size: 16px;
+  margin: 2px;
+}
+
+#report-button{
+  width: 100%;
 }

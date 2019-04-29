@@ -5,13 +5,13 @@ class ReportButton extends Component {
   state = {};
 
   handleReporting = () => {
-    window.location.href="/login";
+    window.location.href = '/login';
   };
 
   render() {
     return (
       <div>
-        <button onClick={this.handleReporting}>Report</button>
+        <button id="report-button" onClick={this.handleReporting}>Report</button>
       </div>
     );
   }
