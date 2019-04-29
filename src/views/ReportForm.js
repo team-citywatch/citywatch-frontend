@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import '../assets/styles/ReportForm.scss';
+import React, { Component } from "react";
+import "../assets/styles/ReportForm.scss";
 
 class ReportForm extends Component {
-  state = { options: [{ id: 1, name: 'Pothole' }] };
-  handleSubmit = (event) => {
+  state = { options: [{ id: 1, name: "Pothole" }] };
+  handleSubmit = event => {
     event.preventDefault();
-    window.location.href = '/reports-feed';
+    window.location.href = "/reports-feed";
   };
   render() {
     const categoryOptions = this.state.options;
