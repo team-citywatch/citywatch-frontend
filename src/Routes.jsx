@@ -9,11 +9,6 @@ const routes = [
     path: "/",
     component: HomePage,
     exact: true
-  },
-  {
-    path: "/reports-feed",
-    component: ReportsPage,
-    exact: true
   }
 ];
 
