@@ -26,7 +26,8 @@ const styles = () => ({
 class App extends React.Component {
   state = {
     map: null,
-    overlays: []
+    overlays: [],
+    currentIndex: null
   };
 
   handleMap = map => {
@@ -39,13 +40,21 @@ class App extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { map, overlays } = this.state;
+    const { map, overlays, currentIndex } = this.state;
 
     return (
       <>
         <CssBaseline />
-        <GoogleMap onSetMap={this.handleMap} overlays={overlays} />
-        <HomePage map={map} setOverlay={this.handleOverlays} />
+        <GoogleMap
+          onSetMap={this.handleMap}
+          overlays={overlays}
+          currentIndex={currentIndex}
+        />
+        <HomePage
+          map={map}
+          setOverlay={this.handleOverlays}
+          onPointing={index => this.setState({ currentIndex: index })}
+        />
         <Typography className={classes.license} variant="caption">
           Team CityWatch in F8
         </Typography>

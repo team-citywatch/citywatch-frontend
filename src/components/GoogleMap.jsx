@@ -8,7 +8,12 @@ const styles = () => ({
   overlay: {
     backgroundColor: "rgba(17, 56, 178, 0.3)",
     border: "solid 1px rgba(17, 56, 178)",
-    borderRadius: "50%"
+    borderRadius: "50%",
+    transition: ".2s ease"
+  },
+  active: {
+    backgroundColor: "rgba(178, 56, 17, 0.3)",
+    border: "solid 1px rgba(178, 56, 17)"
   }
 });
 
@@ -26,7 +31,7 @@ class GoogleMap extends Component {
   };
 
   render() {
-    const { center, zoom, overlays, classes } = this.props;
+    const { center, zoom, overlays, classes, currentIndex } = this.props;
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: "100vh", width: "100%" }}>
@@ -40,7 +45,8 @@ class GoogleMap extends Component {
           {overlays &&
             overlays.map((overlay, index) => (
               <div
-                className={classes.overlay}
+                className={`${classes.overlay} ${index === currentIndex &&
+                  classes.active}`}
                 key={index}
                 lat={overlay.lat}
                 lng={overlay.lng}

@@ -64,6 +64,7 @@ class HomePage extends React.Component {
     });
 
     const current = this.state.items[index];
+    this.props.onPointing(index);
     this.props.map.setCenter({
       lng: current.lng,
       lat: current.lat
@@ -75,6 +76,7 @@ class HomePage extends React.Component {
       activeList: true,
       activeDetailed: false
     });
+    this.props.onPointing(null);
   };
 
   render() {
