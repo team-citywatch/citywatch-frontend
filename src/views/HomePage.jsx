@@ -2,6 +2,9 @@ import React from "react";
 
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import Fab from "@material-ui/core/Fab";
+
+import Link from "@material-ui/icons/Link";
 
 import SearchBar from "../components/SearchBar";
 import ReportOverlay from "../components/ReportOverlay";
@@ -33,6 +36,11 @@ const styles = theme => ({
     },
 
     transition: ".3s ease"
+  },
+  fab: {
+    position: 'absolute',
+    right: 60,
+    bottom: 30
   }
 });
 
@@ -116,6 +124,9 @@ class HomePage extends React.Component {
           item={itemIndex in items && items[itemIndex]}
           onPrevious={this.handlePrevious}
         />
+        <Fab className={classes.fab} color="primary" onClick={() => {window.open('https://m.me/2305937723068633')}}>
+          <Link />
+        </Fab>
       </>
     );
   }
