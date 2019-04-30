@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Close from "@material-ui/icons/Close";
 
 import ReportCard from "./ReportCard";
+import { Typography } from "@material-ui/core";
 
 const styles = theme => ({
   container: {
@@ -42,6 +43,10 @@ const styles = theme => ({
     top: 20,
     right: 20,
     display: "none"
+  },
+  resultMeta: {
+    marginLeft: 10,
+    marginBottom: 10
   }
 });
 
@@ -59,6 +64,9 @@ const ReportOverlay = ({ classes, items, active, onClose, onClickItem }) => (
       </IconButton>
     </Paper>
     <div className={classes.list}>
+      <Typography className={classes.resultMeta}>
+        About {items.length} results
+      </Typography>
       {items &&
         items.map((item, index) => (
           <ReportCard
