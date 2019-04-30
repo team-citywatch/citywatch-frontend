@@ -9,6 +9,14 @@ import DetailedReportOverlay from "../components/DetailedReportOverlay";
 
 import { fetchReport } from "../apis/fetch";
 
+const images = [
+  "building.jpg",
+  "garbage.jpeg",
+  "manhole.jpg",
+  "pothole.jpg",
+  "traffic_light.jpg"
+];
+
 const styles = theme => ({
   searchBar: {
     position: "absolute",
@@ -42,11 +50,17 @@ class HomePage extends React.Component {
   };
 
   handleSubmit = () => {
-    fetchReport().then(items => {
+    fetchReport(this.state.value).then(items => {
       this.setState(
         {
           activeList: true,
-          items: items
+          items: items.map(value => ({
+            ...value,
+            image: value.image
+              ? value.image
+              : "https://s3-us-west-2.amazonaws.com/f8-citywatch/" +
+                images[Math.floor(Math.random() * images.length)]
+          }))
         },
         () => this.props.setOverlay(this.state.items)
       );

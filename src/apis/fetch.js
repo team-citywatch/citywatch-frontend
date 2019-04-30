@@ -1,8 +1,8 @@
 import instance from "./default";
 
-export const fetchReport = () => {
+export const fetchReport = value => {
   return instance
-    .get("/report")
+    .get("/report/" + (value && "?keyword=" + value))
     .then(r => r.data)
     .then(r => r.reports);
 };

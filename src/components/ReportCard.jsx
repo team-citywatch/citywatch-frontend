@@ -84,9 +84,11 @@ const styles = () => ({
   },
   cover: {
     objectFit: "cover",
-    width: "100px !important",
+    flexBasis: 100,
+    maxWidth: 100,
+    width: 100,
     height: 100,
-    marginRight: 5
+    marginRight: 10
   },
   contentBox: {
     flexGrow: 1,
