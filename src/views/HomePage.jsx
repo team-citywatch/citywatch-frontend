@@ -7,7 +7,7 @@ import SearchBar from "../components/SearchBar";
 import ReportOverlay from "../components/ReportOverlay";
 import DetailedReportOverlay from "../components/DetailedReportOverlay";
 
-import googleImage from "../assets/images/googlemaps.jpg";
+import { fetchReport } from "../apis/fetch";
 
 const styles = theme => ({
   searchBar: {
@@ -42,31 +42,15 @@ class HomePage extends React.Component {
   };
 
   handleSubmit = () => {
-    const temp = {
-      content: "hello",
-      location: "///test.test.test",
-      image: googleImage,
-      lat: 27.1,
-      lng: 27.1,
-      reporter: {
-        name: "Jay"
-      },
-      upvote: 10,
-      createdAt: "2017 06 06"
-    };
-    this.setState(
-      {
-        activeList: true,
-        items: [...Array(50).keys()].map(() => ({
-          ...temp,
-          lat: temp.lat + Math.random() * 10,
-          lng: temp.lat + Math.random() * 10
-        }))
-      },
-      () => {
-        this.props.setOverlay(this.state.items);
-      }
-    );
+    fetchReport().then(items => {
+      this.setState(
+        {
+          activeList: true,
+          items: items
+        },
+        () => this.props.setOverlay(this.state.items)
+      );
+    });
   };
 
   handleClose = () => {

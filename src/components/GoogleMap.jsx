@@ -17,8 +17,8 @@ const styles = () => ({
 class GoogleMap extends Component {
   static defaultProps = {
     center: {
-      lat: 59.95,
-      lng: 30.33
+      lat: 37.343393,
+      lng: -121.869534
     },
     zoom: 11
   };
