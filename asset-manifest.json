@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/citywatch-frontend/static/css/main.64c9386d.chunk.css",
+    "main.js": "/citywatch-frontend/static/js/main.349a7f32.chunk.js",
+    "main.js.map": "/citywatch-frontend/static/js/main.349a7f32.chunk.js.map",
+    "runtime~main.js": "/citywatch-frontend/static/js/runtime~main.bb92eaf1.js",
+    "runtime~main.js.map": "/citywatch-frontend/static/js/runtime~main.bb92eaf1.js.map",
+    "static/js/2.860ef78e.chunk.js": "/citywatch-frontend/static/js/2.860ef78e.chunk.js",
+    "static/js/2.860ef78e.chunk.js.map": "/citywatch-frontend/static/js/2.860ef78e.chunk.js.map",
+    "index.html": "/citywatch-frontend/index.html",
+    "precache-manifest.a2ddd5f024aff76de6688707d84b65cc.js": "/citywatch-frontend/precache-manifest.a2ddd5f024aff76de6688707d84b65cc.js",
+    "service-worker.js": "/citywatch-frontend/service-worker.js",
+    "static/css/main.64c9386d.chunk.css.map": "/citywatch-frontend/static/css/main.64c9386d.chunk.css.map"
+  }
+}
