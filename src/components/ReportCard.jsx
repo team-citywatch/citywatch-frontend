@@ -14,7 +14,7 @@ const ReportCard = ({
   upvote,
   image,
   onClick,
-  reporter: { name }
+  user
 }) => (
   <Paper className={classes.item} elevation={0} onClick={onClick}>
     <span className={classes.upvote}>{upvote} Ups!</span>
@@ -48,7 +48,7 @@ const ReportCard = ({
             fontSize="inherit"
             color="disabled"
           />
-          {name}
+          {user && `${user.firstName} ${user.lastName}`}
         </Typography>
       </div>
     </div>
@@ -84,7 +84,7 @@ const styles = () => ({
   },
   cover: {
     objectFit: "cover",
-    width: 100,
+    width: "100px !important",
     height: 100,
     marginRight: 5
   },

@@ -6,8 +6,6 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = () => ({
   overlay: {
-    width: 50,
-    height: 50,
     backgroundColor: "rgba(17, 56, 178, 0.3)",
     border: "solid 1px rgba(17, 56, 178)",
     borderRadius: "50%"
@@ -46,6 +44,10 @@ class GoogleMap extends Component {
                 key={index}
                 lat={overlay.lat}
                 lng={overlay.lng}
+                style={{
+                  width: overlay.upvote * 5,
+                  height: overlay.upvote * 5
+                }}
               />
             ))}
         </GoogleMapReact>

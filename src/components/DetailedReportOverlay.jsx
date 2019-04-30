@@ -80,7 +80,7 @@ class DetailedReportOverlay extends React.Component {
               fontSize="inherit"
               color="disabled"
             />
-            {item.reporter && item.reporter.name}
+            {item.user && `${item.user.firstName} ${item.user.lastName}`}
           </Typography>
 
           <Typography className={classes.content}>{item.content}</Typography>
