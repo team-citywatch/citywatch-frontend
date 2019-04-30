@@ -23,18 +23,21 @@ const styles = theme => ({
       width: 380
     },
 
-    overflowY: "hidden",
-
     transition: ".3s ease"
   },
   active: {
-    paddingTop: 88,
     height: "100vh"
   },
   activeCloseButton: {
     display: "block !important"
   },
+  list: {
+    paddingTop: 88,
+    overflowY: "scroll",
+    height: "100%"
+  },
   closeButton: {
+    zIndex: 2,
     position: "absolute",
     top: 20,
     right: 20,
@@ -55,7 +58,7 @@ const ReportOverlay = ({ classes, items, active, onClose, onClickItem }) => (
         <Close />
       </IconButton>
     </Paper>
-    <div>
+    <div className={classes.list}>
       {items &&
         items.map((item, index) => (
           <ReportCard

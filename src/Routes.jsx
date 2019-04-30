@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import HomePage from "./views/HomePage";
-import ReportsPage from "./views/ReportsPage";
 
 const routes = [
   {

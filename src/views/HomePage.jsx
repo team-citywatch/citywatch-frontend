@@ -42,35 +42,31 @@ class HomePage extends React.Component {
   };
 
   handleSubmit = () => {
-    this.setState({
-      activeList: true,
-      items: [
-        {
-          content: "hello",
-          location: "///test.test.test",
-          image: googleImage,
-          lat: 27,
-          lng: 27,
-          reporter: {
-            name: "Jay"
-          },
-          upvote: 10,
-          createdAt: "2017 06 06"
-        },
-        {
-          content: "hello",
-          location: "///test.test.test",
-          image: googleImage,
-          lat: 27,
-          lng: 27,
-          reporter: {
-            name: "Jay"
-          },
-          upvote: 10,
-          createdAt: "2017 06 06"
-        }
-      ]
-    });
+    const temp = {
+      content: "hello",
+      location: "///test.test.test",
+      image: googleImage,
+      lat: 27.1,
+      lng: 27.1,
+      reporter: {
+        name: "Jay"
+      },
+      upvote: 10,
+      createdAt: "2017 06 06"
+    };
+    this.setState(
+      {
+        activeList: true,
+        items: [...Array(50).keys()].map(() => ({
+          ...temp,
+          lat: temp.lat + Math.random() * 10,
+          lng: temp.lat + Math.random() * 10
+        }))
+      },
+      () => {
+        this.props.setOverlay(this.state.items);
+      }
+    );
   };
 
   handleClose = () => {
@@ -81,6 +77,12 @@ class HomePage extends React.Component {
     this.setState({
       activeDetailed: true,
       itemIndex: index
+    });
+
+    const current = this.state.items[index];
+    this.props.map.setCenter({
+      lng: current.lng,
+      lat: current.lat
     });
   };
 
