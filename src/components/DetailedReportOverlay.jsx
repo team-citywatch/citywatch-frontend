@@ -72,7 +72,7 @@ class DetailedReportOverlay extends React.Component {
               fontSize="inherit"
               color="disabled"
             />
-            {item.location}
+            {item.location && item.location.slice(3)}
           </Typography>
           <Typography className={classes.metaTypo}>
             <Person
@@ -80,7 +80,7 @@ class DetailedReportOverlay extends React.Component {
               fontSize="inherit"
               color="disabled"
             />
-            {item.user && `${item.user.firstName} ${item.user.lastName}`}
+            {item.user && item.user.lastName}
           </Typography>
 
           <Typography className={classes.content}>{item.content}</Typography>

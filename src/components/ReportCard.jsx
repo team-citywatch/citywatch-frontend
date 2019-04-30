@@ -35,7 +35,7 @@ const ReportCard = ({
             fontSize="inherit"
             color="disabled"
           />
-          {location}
+          {location && location.slice(3)}
         </Typography>
         <Typography
           variant="caption"
@@ -48,7 +48,7 @@ const ReportCard = ({
             fontSize="inherit"
             color="disabled"
           />
-          {user && `${user.firstName} ${user.lastName}`}
+          {user && user.lastName}
         </Typography>
       </div>
     </div>
