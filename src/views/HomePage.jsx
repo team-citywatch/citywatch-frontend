@@ -3,8 +3,9 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Fab from "@material-ui/core/Fab";
+import Tooltip from "@material-ui/core/Tooltip";
 
-import Link from "@material-ui/icons/Link";
+import Send from "@material-ui/icons/Send";
 
 import SearchBar from "../components/SearchBar";
 import ReportOverlay from "../components/ReportOverlay";
@@ -124,9 +125,11 @@ class HomePage extends React.Component {
           item={itemIndex in items && items[itemIndex]}
           onPrevious={this.handlePrevious}
         />
-        <Fab className={classes.fab} color="primary" onClick={() => {window.open('https://m.me/2305937723068633')}}>
-          <Link />
-        </Fab>
+        <Tooltip title="Report an issue" aria-label="Report an issue">
+          <Fab className={classes.fab} color="primary" onClick={() => {window.open('https://m.me/2305937723068633')}}>
+            <Send />
+          </Fab>
+        </Tooltip>
       </>
     );
   }
